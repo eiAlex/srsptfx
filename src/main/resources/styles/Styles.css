@@ -1,0 +1,127 @@
+/* Estilos gerais da página
+--------------------------------- */
+
+
+
+#paneTopPrimario {
+     -fx-background-color:FF7E01;
+}
+
+#paneTopInferior{
+   -fx-background-color:E86308;
+}
+
+#paneMidEsquerdo {
+    -fx-background-color:FFFFFF;
+    -fx-border-color: gray;
+}
+
+#paneMidEsquerdo1 {
+    -fx-background-color:darkorange;
+    -fx-border-color: gray;
+}
+
+#paneMidDireito{
+    -fx-background-color: FFFFFF;
+    -fx-border-color: gray;
+
+}
+
+#paneMidDireito2{
+    -fx-background-color: darkgreen;
+    -fx-border-color: gray;
+
+}
+
+
+#paneBot{
+    -fx-background-color: FFFFFF;
+    -fx-border-color: gray;
+
+}
+
+#anchorPanePrincipal{
+    -fx-background-color: cyan;
+}
+
+#vBoxMain {
+    -fx-background-color: cyan;
+   
+}
+#labelInfoPaneTop {
+    -fx-background-color: FF7E01;
+    -fx-alignment: center;
+    -fx-font-size: 20;
+    -fx-text-fill: white;    
+}
+
+#labelInfoPane {
+    -fx-background-color: FF7E01;
+    -fx-alignment: center;
+    -fx-font-size: 14;
+    -fx-text-fill: white; 
+    
+}
+
+#textFieldInfo{
+      -fx-text-box-border: gray ;
+      -fx-focus-color: FF7E01 ;
+      -fx-border-width: 0 1 1 1, 1 0 0 0;
+     -fx-border-radius: 5, 5;
+     -fx-border-color: gray, gray;
+     -fx-background-color: #ffffff;
+     -fx-font-size: 13;
+     
+     
+      
+}
+#textFieldInfo:hover{
+      -fx-text-box-border: E86308 ;
+     -fx-focus-color: FF7E01 ;
+     -fx-border-width: 0 1 1 1, 1 0 0 0;
+     -fx-border-radius: 5, 5;
+     -fx-border-color: E86308, E86308;
+     -fx-background-color: #ffffff;
+     -fx-font-size: 13;
+      
+}
+
+#textFieldInfo:focused{
+     -fx-border-width: 0 1 1 1, 1 0 0 0;
+     -fx-border-radius: 5, 5;
+     -fx-border-color: E86308, E86308;
+     -fx-background-color: #ffffff;
+     -fx-font-size: 13;
+   
+  
+     
+     
+}
+
+
+#buttonTopView{
+    -fx-background-color: FF7E01;
+    -fx-alignment: center;
+    -fx-font-size: 13;
+    -fx-text-fill: white;
+}
+#buttonTopView:hover{
+     -fx-background-color: E86308;
+     -fx-text-box-border: gray ;
+     -fx-focus-color: FF7E01 ;
+}
+
+#buttonViewMid{
+    -fx-background-color: FF7E01;
+    -fx-alignment: center;
+    -fx-font-size: 13;
+    -fx-text-fill: white;
+}
+
+#buttonViewMid:hover{
+    -fx-background-color: E86308;
+    -fx-text-box-border: gray ;
+    -fx-focus-color: FF7E01 ;
+}
+
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane id="paneMidEsquerdo" fx:id="paneMidEsquerdo" prefHeight="360.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label id="labelInfoPaneTop" layoutX="68.0" layoutY="22.0" prefHeight="30.0" prefWidth="290.0" text="Este computador" />
+      <GridPane layoutX="68.0" layoutY="72.0" prefHeight="70.0" prefWidth="290.0">
+         <children>
+            <Label id="labelInfoPane" prefHeight="30.0" prefWidth="70.0" text="ID" />
+            <TextField id="textFieldInfo" editable="false" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1" />
+            <Label id="labelInfoPane" prefHeight="30.0" prefWidth="70.0" text="SENHA" GridPane.rowIndex="1" />
+            <TextField id="textFieldInfo" editable="false" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="76.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="20.0" prefWidth="214.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Label id="labelInfoPaneTop" layoutX="68.0" layoutY="213.0" prefHeight="30.0" prefWidth="290.0" text="Computador remoto" />
+      <GridPane layoutX="64.0" layoutY="258.0" prefHeight="40.0" prefWidth="290.0">
+         <children>
+            <Button id="buttonViewMid" alignment="CENTER_RIGHT" mnemonicParsing="true" prefHeight="30.0" prefWidth="90.0" text="CONECTAR" textAlignment="JUSTIFY" GridPane.columnIndex="1" />
+            <TextField id="textFieldInfo" prefHeight="30.0" prefWidth="200.0" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints fillWidth="false" hgrow="ALWAYS" maxWidth="214.0" minWidth="20.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="87.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Label layoutX="70.0" layoutY="153.0" prefHeight="40.0" prefWidth="284.0" text="Seu computador está acessível através desta ID. Para mais informações clique em saiba mais." wrapText="true" />
+      <Label layoutX="64.0" layoutY="298.0" prefHeight="40.0" prefWidth="290.0" text="Entre com ID para se conectar a um computador remoto." wrapText="true" />
+   </children>
+</Pane>
