@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox id="vBoxMain" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="440.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.srsuporte.srsptfx.controller.FXMLVBoxMainController">
+   <children>
+      <AnchorPane id="anchorPanePrincipal" prefHeight="450.0" prefWidth="850.0" VBox.vgrow="NEVER">
+         <children>
+             <Pane id="paneTopPrimario" prefHeight="40.0" prefWidth="850.0">
+               <children>
+                  <Button id="buttonTopView" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Configurações" />
+                  <Button id="buttonTopView" layoutX="118.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Info. Sistema" />
+                  <Button id="buttonTopView" layoutX="222.0" layoutY="8.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="104.0" text="Sobre" />
+               </children></Pane>
+            <Pane id="paneTopInferior" layoutX="0.5" layoutY="40.0" prefHeight="20.0" prefWidth="850.0" />
+            <Pane id="paneMidEsquerdo" fx:id="paneMidEsquerdo" layoutY="60.0" prefHeight="360.0" prefWidth="425.0" />
+            <Pane id="paneMidDireito" layoutX="425.0" layoutY="60.0" prefHeight="360.0" prefWidth="425.0">
+               <children>
+                  <Button id="buttonViewMid" fx:id="buttonAbrirChamado" layoutX="148.0" layoutY="91.0" mnemonicParsing="false" onAction="#ClickButtonAbrirChamado" prefHeight="25.0" prefWidth="129.0" text="ABRIR CHAMADO" />
+                  <Button id="buttonViewMid" fx:id="buttonMeusChamados" layoutX="148.0" layoutY="138.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="MEUS CHAMADOS" />
+               </children></Pane>
+            <Pane id="paneBot" fx:id="paneBot" layoutY="420.0" prefHeight="30.0" prefWidth="850.0" />
+         </children>
+      </AnchorPane>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</VBox>
