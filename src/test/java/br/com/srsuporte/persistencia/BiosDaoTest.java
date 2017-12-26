@@ -7,7 +7,6 @@ package br.com.srsuporte.persistencia;
 
 import com.srsuporte.persistencia.BiosDao;
 import com.srsuporte.srsptfx.model.Bios;
-import java.io.File;
 import java.io.IOException;
 import org.junit.Assert;
 import org.junit.Before;
@@ -20,10 +19,9 @@ import org.junit.Test;
 public class BiosDaoTest {
 
     private Bios bios;
-    
+
     @Before
     public void onInit() throws IOException {
-        Process exec = Runtime.getRuntime().exec("wmic bios get");
         bios = new BiosDao().recuperarDadosBios();
     }
 
@@ -34,7 +32,17 @@ public class BiosDaoTest {
 
     @Test
     public void deveriaRecuperarAVersaoDaBios() {
-        Assert.assertTrue(bios.getVersao() != null);
+        Assert.assertEquals("060810 - 20100608", bios.getVersao());
+    }
+    
+    @Test
+    public void deveriaRecuperarOFabricanteDaBios() {
+        Assert.assertEquals("American Megatrends Inc.", bios.getFabricante());
+    }
+    
+    @Test
+    public void deveriaRecuperarADataDaBios(){
+        Assert.assertTrue(bios.getDataBios() != null);
     }
 
 }

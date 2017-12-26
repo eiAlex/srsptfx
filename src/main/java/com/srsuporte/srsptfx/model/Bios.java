@@ -15,8 +15,18 @@ public class Bios {
 
     private Calendar dataBios;
     private String versao;
-    private Fabricante fabricante;
+    private String fabricante;
 
+    public Bios(){
+        
+    }
+
+    public Bios(Calendar dataBios, String versao, String fabricante) {
+        this.dataBios = dataBios;
+        this.versao = versao;
+        this.fabricante = fabricante;
+    }
+    
     public Calendar getDataBios() {
         return dataBios;
     }
@@ -33,11 +43,11 @@ public class Bios {
         this.versao = versao;
     }
 
-    public Fabricante getFabricante() {
+    public String getFabricante() {
         return fabricante;
     }
 
-    public void setFabricante(Fabricante fabricante) {
+    public void setFabricante(String fabricante) {
         this.fabricante = fabricante;
     }
     

@@ -17,7 +17,7 @@ public class PlacaMae {
     private String serial;
     private String versao;
 
-    private Fabricante fabricante;
+    private String fabricante;
 
     public String getDescricao() {
         return descricao;
@@ -59,11 +59,11 @@ public class PlacaMae {
         this.versao = versao;
     }
 
-    public Fabricante getFabricante() {
+    public String getFabricante() {
         return fabricante;
     }
 
-    public void setFabricante(Fabricante fabricante) {
+    public void setFabricante(String fabricante) {
         this.fabricante = fabricante;
     }
 
