@@ -7,6 +7,7 @@ package br.com.srsuporte.persistencia;
 
 import com.srsuporte.persistencia.BiosDao;
 import com.srsuporte.srsptfx.model.Bios;
+import com.srsuporte.srsptfx.servico.FormatoDataInvalidaException;
 import java.io.IOException;
 import org.junit.Assert;
 import org.junit.Before;
@@ -21,8 +22,8 @@ public class BiosDaoTest {
     private Bios bios;
 
     @Before
-    public void onInit() throws IOException {
-        bios = new BiosDao().recuperarDadosBios();
+    public void onInit() throws IOException, FormatoDataInvalidaException {
+        bios = new BiosDao().recuperarDados();
     }
 
     @Test

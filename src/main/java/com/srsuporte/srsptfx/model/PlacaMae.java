@@ -19,6 +19,18 @@ public class PlacaMae {
 
     private String fabricante;
 
+    public PlacaMae() {
+    }
+    
+    public PlacaMae(String descricao, String modelo, String nome, String serial, String versao, String fabricante) {
+        this.descricao = descricao;
+        this.modelo = modelo;
+        this.nome = nome;
+        this.serial = serial;
+        this.versao = versao;
+        this.fabricante = fabricante;
+    }
+    
     public String getDescricao() {
         return descricao;
     }
