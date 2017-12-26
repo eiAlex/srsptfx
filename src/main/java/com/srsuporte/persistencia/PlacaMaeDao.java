@@ -6,9 +6,7 @@
 package com.srsuporte.persistencia;
 
 import com.srsuporte.srsptfx.model.PlacaMae;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 /**
  *
@@ -16,21 +14,12 @@ import java.io.InputStreamReader;
  */
 public class PlacaMaeDao {
     
+    private final String comando = "wmic baseboard get description, manufacturer, product, name, SerialNumber, version /format:csv";
+    
     public PlacaMae recuperarDados() throws IOException{
-        Runtime runtime = Runtime.getRuntime();
-        Process wmic = runtime.exec("wmic baseboard get description, manufacturer, model, name, SerialNumber, version /format:csv");
-        BufferedReader leitor = new BufferedReader(new InputStreamReader(wmic.getInputStream()));
-        String texto = leitor.readLine();
-        while(texto != null){
-            if(texto.contains("Node")){
-                leitor.readLine();
-                texto = leitor.readLine();
-                break;
-            }
-            texto = leitor.readLine();
-        }
+        String texto = new LeitorWmic().executarProcesso(this.comando, "Node");
         String[] vetor = texto.split(",");
-        return new PlacaMae(vetor[1], vetor[3], vetor[4], vetor[5], vetor[6], vetor[2]);
+        return new PlacaMae(vetor[1], vetor[2], vetor[3], vetor[4], vetor[5], vetor[6]);
     }
     
 }

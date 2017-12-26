@@ -22,7 +22,7 @@ public class PlacaMae {
     public PlacaMae() {
     }
     
-    public PlacaMae(String descricao, String modelo, String nome, String serial, String versao, String fabricante) {
+    public PlacaMae(String descricao, String fabricante, String nome, String modelo, String serial, String versao) {
         this.descricao = descricao;
         this.modelo = modelo;
         this.nome = nome;

@@ -17,8 +17,10 @@ import java.util.Calendar;
  */
 public class BiosDao {
     
+    private final String comando = "wmic bios get manufacturer, releasedate, version /format:csv";
+    
     public Bios recuperarDados() throws IOException, FormatoDataInvalidaException {
-        String texto = new LeitorWmic().executarProcesso("wmic bios get manufacturer, releasedate, version /format:csv", "Node");
+        String texto = new LeitorWmic().executarProcesso(this.comando, "Node");
         String[] vetor = texto.split(",");
         Calendar data = new ConversorData().converterData(vetor[2]);
         return new Bios(data, vetor[3], vetor[1]);

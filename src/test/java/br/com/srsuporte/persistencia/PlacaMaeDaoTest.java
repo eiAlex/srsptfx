@@ -27,7 +27,11 @@ public class PlacaMaeDaoTest {
     
     @Test
     public void deveriaLerOFabricate(){
-        Assert.assertTrue(this.placaMae.getFabricante() != null);
+        Assert.assertEquals("ASUSTeK Computer INC.", this.placaMae.getFabricante());
     }
     
+    @Test
+    public void deveriaLerOModelo(){
+        Assert.assertEquals("M2N68-AM SE2", placaMae.getModelo());
+    }
 }
