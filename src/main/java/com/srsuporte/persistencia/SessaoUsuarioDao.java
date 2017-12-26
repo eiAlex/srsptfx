@@ -5,13 +5,21 @@
  */
 package com.srsuporte.persistencia;
 
+import com.srsuporte.srsptfx.model.SessaoUsuario;
+import java.io.IOException;
+
 /**
  *
  * @author Sr computador
  */
 public class SessaoUsuarioDao {
     
-    public void recuperarDados() {
+    private final String comando = "wmic computersystem get primaryownername, domain /format:csv";
+    
+    public void recuperarDados() throws IOException {
+        String texto = new LeitorWmic().executarProcesso(comando, "Node");
+        String[] vetor = texto.split(",");
+        SessaoUsuario su = new SessaoUsuario(vetor[0], vetor[1], vetor[2]);
         
     }
     

@@ -14,11 +14,20 @@ import java.util.Calendar;
 public class SessaoUsuario {
     
     private String nomeComputador;
-    private String nomeUsuario; 
     private String nomeDominio;
+    private String nomeUsuario; 
     
     private Calendar tempoAtivo;
 
+    public SessaoUsuario() {
+    }
+    
+    public SessaoUsuario(String nomeComputador, String nomeDominio, String nomeUsuario) {
+        this.nomeComputador = nomeComputador;
+        this.nomeDominio = nomeDominio;
+        this.nomeUsuario = nomeUsuario;
+    }
+    
     public String getNomeComputador() {
         return nomeComputador;
     }
