@@ -32,23 +32,10 @@ public class FXMLVBoxMainController implements Initializable {
     private Button buttonAbrirChamado;
     
 
+    ConstrutorDeTelas construtorDeTelas = new ConstrutorDeTelas();
    
 
-    public void CarregaPaneNovoChamado(ActionEvent event) throws IOException {
-        Pane newLoadedPane = FXMLLoader.load(getClass().getResource("/view/FXMLPaneNovoChamado.fxml"));
-        paneMidEsquerdo.getChildren().add(newLoadedPane);
-    }
-     
-     public void CarregaPaneAcessoRemoto(ActionEvent event) throws IOException {
-        Pane newLoadedPane = FXMLLoader.load(getClass().getResource("/view/FXMLPaneAcessoRemoto.fxml"));
-        paneMidEsquerdo.getChildren().add(newLoadedPane);
-    }
-     
-     public void CarregaPaneMenuChamados(ActionEvent event) throws IOException {
-        Pane newLoadedPane = FXMLLoader.load(getClass().getResource("/view/FXMLPaneMenuChamados.fxml"));
-        paneMidEsquerdo.getChildren().add(newLoadedPane);
-    }
-     
+    
     
 
     @FXML
@@ -56,14 +43,17 @@ public class FXMLVBoxMainController implements Initializable {
 
         System.out.println("Click em Abrir Chamado!");
         //buttonAbrirChamado.setDisable(true);
+        construtorDeTelas.contruirPane("/view/FXMLPaneNovoChamado.fxml", paneMidEsquerdo);
 
-        CarregaPaneAcessoRemoto(event);
        
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       
+        //constri pane relativo ao acesso remoto
+        
+        construtorDeTelas.contruirPane("/view/FXMLPaneAcessoRemoto.fxml", paneMidEsquerdo);
 
     }
 
