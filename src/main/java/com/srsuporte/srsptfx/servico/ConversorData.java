@@ -30,5 +30,26 @@ public class ConversorData {
         Calendar calendario = new GregorianCalendar(ano, mes-1, dia);
         return calendario;
     }
-    
+    /**
+     *Exemplo de data(20100804120334)
+     * 
+     * @param data -> ano/mes/dia/hora/minutos/segundos
+     * @return Java.Util.GregorianCalendar 
+     * @throws com.srsuporte.srsptfx.servico.FormatoDataInvalidaException 
+     */
+    public Calendar converterDataCompleta(String data) throws FormatoDataInvalidaException{
+        if(data.length() < 14){
+            throw new FormatoDataInvalidaException("Data: " + data + " não deve ser menor que 14 caracteres");
+        }
+        
+        Calendar calendario = this.converterData(data.substring(0, 8));
+        int hora = Integer.parseInt(data.substring(8, 10));
+        int minutos = Integer.parseInt(data.substring(10, 12));
+        int segundos = Integer.parseInt(data.substring(12, 14));
+        calendario.set(Calendar.HOUR_OF_DAY, hora);
+        calendario.set(Calendar.MINUTE, minutos);
+        calendario.set(Calendar.SECOND, segundos);
+        
+        return calendario;
+    }
 }
