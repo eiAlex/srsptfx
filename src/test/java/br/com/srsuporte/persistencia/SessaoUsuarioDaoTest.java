@@ -30,17 +30,17 @@ public class SessaoUsuarioDaoTest {
     
     @Test
     public void deveriaLerONomeDoComputador(){
-        Assert.assertEquals("DESENVOLVIMENTO", this.sessaoUsuario.getNomeComputador());
+        Assert.assertTrue(this.sessaoUsuario.getNomeComputador() != null);
     }
 
     @Test
     public void deveriaLerONomeDoUsuario() {
-        Assert.assertEquals("Sr computador", this.sessaoUsuario.getNomeUsuario());
+        Assert.assertTrue(this.sessaoUsuario.getNomeUsuario() != null);
     }
     
     @Test
     public void deveriaLerONomeDoDominio() {
-        Assert.assertEquals("WORKGROUP", this.sessaoUsuario.getNomeDominio());
+        Assert.assertTrue(this.sessaoUsuario.getNomeDominio() != null);
     }
     
     @Test

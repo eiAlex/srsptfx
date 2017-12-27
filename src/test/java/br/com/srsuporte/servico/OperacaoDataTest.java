@@ -21,7 +21,7 @@ public class OperacaoDataTest {
     public void deveriaEncontrarADiferencaEntreDuasDatas(){
         GregorianCalendar dataInicial = new GregorianCalendar(2010, 0, 4, 10, 1, 30);
         dataInicial.set(Calendar.MILLISECOND, 10);
-        
+  
         GregorianCalendar dataFinal = new GregorianCalendar(2017, 11, 6, 12, 3, 34);
         dataFinal.set(Calendar.MILLISECOND, 40);
         Calendar data = new OperacaoData().encontrarDiferencaEntreDatas(dataInicial, dataFinal);
