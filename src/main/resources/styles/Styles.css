@@ -75,7 +75,7 @@
      
       
 }
-#textFieldInfo:hover{
+#textFieldInfo:cell-selection{
       -fx-text-box-border: E86308 ;
      -fx-focus-color: FF7E01 ;
      -fx-border-width: 0 1 1 1, 1 0 0 0;
@@ -98,6 +98,16 @@
      
 }
 
+#textFieldInfo:focus{
+    
+     -fx-border-width: 0 1 1 1, 1 0 0 0;
+     -fx-border-radius: 5, 5;
+     -fx-border-color: E86308, E86308;
+     -fx-background-color: #ffffff;
+     -fx-font-size: 13;
+    
+    
+}
 
 #buttonTopView{
     -fx-background-color: FF7E01;
