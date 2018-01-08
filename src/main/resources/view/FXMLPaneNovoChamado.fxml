@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<Pane id="paneMidEsquerdo" fx:id="paneMidEsquerdo" prefHeight="360.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="paneMidEsquerdo" fx:id="paneMidEsquerdo" prefHeight="360.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.srsuporte.srsptfx.controller.FXMLPaneNovoChamadoController">
    <children>
       <Label id="labelInfoPaneTop" layoutX="68.0" layoutY="22.0" prefHeight="30.0" prefWidth="290.0" text="Informações do chamado" />
       <GridPane layoutX="68.0" layoutY="72.0" prefHeight="101.0" prefWidth="290.0">
@@ -31,5 +32,7 @@
          </rowConstraints>
       </GridPane>
       <TextArea id="textFieldInfo" layoutX="68.0" layoutY="193.0" prefHeight="122.0" prefWidth="290.0" wrapText="true" />
+      <Button id="buttonViewMid" layoutX="68.0" layoutY="321.0" mnemonicParsing="false" onAction="#ClickButtonAbrirChamado" text="Enviar" />
+      <Button id="buttonViewMid" layoutX="296.0" layoutY="321.0" mnemonicParsing="false" onAction="#ClickButtonCancelarChamado" text="Cancelar" />
    </children>
 </Pane>

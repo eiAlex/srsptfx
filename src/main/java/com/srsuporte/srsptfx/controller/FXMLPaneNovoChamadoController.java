@@ -7,6 +7,7 @@ package com.srsuporte.srsptfx.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -16,12 +17,27 @@ import javafx.fxml.Initializable;
  */
 public class FXMLPaneNovoChamadoController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    public void ClickButtonAbrirChamado() {
+
+        System.out.println("Click em Abri Chamado!");
+        //buttonAbrirChamado.setDisable(true);
+        // construtorDeTelas.contruirPane("/view/FXMLPaneNovoChamado.fxml", paneMidEsquerdo);
+
+    }
+
+    @FXML
+    public void ClickButtonCancelarChamado() {
+
+        System.out.println("Click em Cancelar Chamado!");
+        //buttonAbrirChamado.setDisable(true);
+        // construtorDeTelas.contruirPane("/view/FXMLPaneNovoChamado.fxml", paneMidEsquerdo);
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }
