@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane id="paneMidEsquerdo" fx:id="paneMidEsquerdo" prefHeight="360.0" prefWidth="425.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.srsuporte.srsptfx.controller.FXMLPaneSobreController">
+   <children>
+       <Label id="labelInfoPaneTop" layoutX="68.0" layoutY="22.0" prefHeight="30.0" prefWidth="290.0" text="Sobre" />
+      
+   </children>
+</Pane>

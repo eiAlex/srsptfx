@@ -13,9 +13,10 @@
          <children>
              <Pane id="paneTopPrimario" prefHeight="40.0" prefWidth="850.0">
                <children>
-                  <Button id="buttonTopView" layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#ClickButtonConfiguracoes" prefHeight="25.0" prefWidth="104.0" text="Configurações" />
-                  <Button id="buttonTopView" layoutX="118.0" layoutY="8.0" mnemonicParsing="false" onAction="#ClickButtonInfoSistema" prefHeight="25.0" prefWidth="104.0" text="Info. Sistema" />
-                  <Button id="buttonTopView" layoutX="222.0" layoutY="8.0" mnemonicParsing="false" onAction="#ClickButtonSobre" prefHeight="25.0" prefWidth="104.0" text="Sobre" />
+                  <Button id="buttonTopView" layoutX="224.0" layoutY="8.0" mnemonicParsing="false" onAction="#ClickButtonConfiguracoes" prefHeight="25.0" prefWidth="111.0" text="Configurações" />
+                  <Button id="buttonTopView" layoutX="120.0" layoutY="8.0" mnemonicParsing="false" onAction="#ClickButtonInfoSistema" prefHeight="25.0" prefWidth="104.0" text="Info. Sistema" />
+                  <Button id="buttonTopView" layoutX="335.0" layoutY="8.0" mnemonicParsing="false" onAction="#ClickButtonSobre" prefHeight="25.0" prefWidth="73.0" text="Sobre" />
+                  <Button id="buttonTopView" layoutY="8.0" mnemonicParsing="false" onAction="#ClickButtonConexaoRemota" prefHeight="25.0" prefWidth="120.0" text="Conexão Remota" />
                </children></Pane>
             <Pane id="paneTopInferior" layoutX="0.5" layoutY="40.0" prefHeight="20.0" prefWidth="850.0" />
             <Pane id="paneMidEsquerdo" fx:id="paneMidEsquerdo" layoutY="60.0" prefHeight="360.0" prefWidth="425.0" />
