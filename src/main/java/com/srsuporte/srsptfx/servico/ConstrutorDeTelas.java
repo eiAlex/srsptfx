@@ -38,7 +38,8 @@ public class ConstrutorDeTelas implements ChangeListener {
 
         try {
             webView.autosize();
-            webView.getEngine().load("https://www.google.com");
+            webView.getFontScale();
+            webView.getEngine().load("https://google.com");
             
         } catch (Exception e) {
         }
