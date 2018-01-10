@@ -5,6 +5,8 @@
  */
 package com.srsuporte.srsptfx.model;
 
+import java.util.List;
+
 /**
  *
  * @author Suporte
@@ -12,13 +14,25 @@ package com.srsuporte.srsptfx.model;
 public class UnidadeFisica {
     private String description;
     private String deviceID;
-    private int index;
+    private Integer index;
     private String model;
-    private int partitions;
+    private Integer partitions;
     private String PNPDeviceID;
-    private long size;
+    private Long size;
     private String status;
-    private UnidadeLogica unidadeLogica;
+    private List<UnidadeLogica> unidadeLogica;
+
+    public UnidadeFisica(String description, String deviceID, String index, String model, String partitions, String PNPDeviceID, String size, String status, List<UnidadeLogica> unidadeLogica) {
+        this.description = description;
+        this.deviceID = deviceID;
+        this.index = index.isEmpty() ? null : Integer.valueOf(index);
+        this.model = model;
+        this.partitions = partitions.isEmpty() ? null : Integer.valueOf(partitions);
+        this.PNPDeviceID = PNPDeviceID;
+        this.size = size.isEmpty() ? null : Long.valueOf(size);
+        this.status = status;
+        this.unidadeLogica = unidadeLogica;
+    }
 
     public String getDescription() {
         return description;
@@ -36,11 +50,11 @@ public class UnidadeFisica {
         this.deviceID = DeviceID;
     }
 
-    public int getIndex() {
+    public Integer getIndex() {
         return index;
     }
 
-    public void setIndex(int index) {
+    public void setIndex(Integer index) {
         this.index = index;
     }
 
@@ -52,11 +66,11 @@ public class UnidadeFisica {
         this.model = model;
     }
 
-    public int getPartitions() {
+    public Integer getPartitions() {
         return partitions;
     }
 
-    public void setPartitions(int partitions) {
+    public void setPartitions(Integer partitions) {
         this.partitions = partitions;
     }
 
@@ -68,11 +82,11 @@ public class UnidadeFisica {
         this.PNPDeviceID = PNPDeviceID;
     }
 
-    public long getSize() {
+    public Long getSize() {
         return size;
     }
 
-    public void setSize(long size) {
+    public void setSize(Long size) {
         this.size = size;
     }
 
@@ -84,11 +98,11 @@ public class UnidadeFisica {
         this.status = status;
     }
 
-    public UnidadeLogica getUnidadeLogica() {
+    public List getUnidadeLogica() {
         return unidadeLogica;
     }
 
-    public void setUnidadeLogica(UnidadeLogica unidadeLogica) {
+    public void setUnidadeLogica(List<UnidadeLogica> unidadeLogica) {
         this.unidadeLogica = unidadeLogica;
     }
 

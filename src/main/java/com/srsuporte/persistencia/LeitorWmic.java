@@ -8,6 +8,8 @@ package com.srsuporte.persistencia;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -29,5 +31,25 @@ public class LeitorWmic {
         }
         return null;
     }
-    
+
+    public List<String> executarProcessoMuitasLinhas(String comando, String delimitador) throws IOException {
+        Process exec = Runtime.getRuntime().exec(comando);
+        BufferedReader br = new BufferedReader(new InputStreamReader(exec.getInputStream()));
+        List<String> lines = new ArrayList<>();
+        String line;
+        boolean fGetLine = false;
+        while ((line = br.readLine()) != null) {
+            fGetLine = line.contains(delimitador);
+            if (fGetLine) {
+                while ((line = br.readLine()) != null) {
+                    if (line.isEmpty()) {
+                        continue;
+                    }
+                    lines.add(line);
+                }
+            }
+        }
+        br.close();
+        return lines;
+    }
 }

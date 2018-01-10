@@ -14,11 +14,22 @@ public class UnidadeLogica {
     private String deviceID; // exemplo C: D: 
     private String fileSystem;
     private String volumeSerialNumber;
-    private int driveType;
-    private long freeSpace; // em bytes
-    private long size; // em bytes
+    private Integer driveType;
+    private Long freeSpace; // em bytes
+    private Long size; // em bytes
     private String volumeName; // nome atribuido ao volume exemplo: DADOS
-    
+    private Integer index;
+
+    public UnidadeLogica(String deviceID, String driveType, String fileSystem, String freeSpace, String size, String volumeName, String volumeSerialNumber) {
+        this.deviceID = deviceID;
+        this.fileSystem = fileSystem;
+        this.volumeSerialNumber = volumeSerialNumber;
+        this.driveType = driveType.isEmpty() ? null : Integer.valueOf(driveType);
+        this.freeSpace = freeSpace.isEmpty() ? null : Long.valueOf(freeSpace);
+        this.size = size.isEmpty() ? null : Long.valueOf(size);
+        this.volumeName = volumeName;
+    }
+
     
 
     public String getVolumeSerialNumber() {
@@ -46,7 +57,7 @@ public class UnidadeLogica {
         this.fileSystem = fileSystem;
     }
 
-    public int getDriveType() {
+    public Integer getDriveType() {
         return driveType;
     }
 
@@ -54,7 +65,7 @@ public class UnidadeLogica {
         this.driveType = driveType;
     }
 
-    public long getFreeSpace() {
+    public Long getFreeSpace() {
         return freeSpace;
     }
 
@@ -62,7 +73,7 @@ public class UnidadeLogica {
         this.freeSpace = freeSpace;
     }
 
-    public long getSize() {
+    public Long getSize() {
         return size;
     }
 
@@ -78,4 +89,13 @@ public class UnidadeLogica {
         this.volumeName = volumeName;
     }
 
+    public Integer getIndex() {
+        return index;
+    }
+
+    public void setIndex(Integer index) {
+        this.index = index;
+    }
+
+    
 }

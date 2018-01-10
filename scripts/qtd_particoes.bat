@@ -1,0 +1,1 @@
+wmic diskdrive get index /format:csv | find /c /v ""
