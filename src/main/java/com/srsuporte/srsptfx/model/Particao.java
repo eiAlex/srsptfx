@@ -11,9 +11,41 @@ package com.srsuporte.srsptfx.model;
  */
 public class Particao {
 
-    private Integer numero;
+    private Integer particaoIndex;
     private String letra;
-    private String rotulo;
-    private String sistemaDeArquivo;
-    private String tipo;
+    private Integer diskIndex;
+
+    public Particao() {
+    }
+
+    public Particao(String diskIndex, String index, String letra) {
+        this.diskIndex = Integer.valueOf(diskIndex);
+        this.particaoIndex = Integer.valueOf(index);
+        this.letra = letra;
+    }
+
+    public Integer getIndex() {
+        return particaoIndex;
+    }
+
+    public void setIndex(Integer index) {
+        this.particaoIndex = index;
+    }
+
+    public String getLetra() {
+        return letra;
+    }
+
+    public void setLetra(String letra) {
+        this.letra = letra;
+    }
+
+    public Integer getDiskIndex() {
+        return diskIndex;
+    }
+
+    public void setDiskIndex(Integer diskIndex) {
+        this.diskIndex = diskIndex;
+    }
+
 }

@@ -5,14 +5,12 @@ package com.srsuporte.persistencia;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import com.srsuporte.srsptfx.model.Particao;
 import com.srsuporte.srsptfx.model.UnidadeFisica;
 import com.srsuporte.srsptfx.model.UnidadeLogica;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
@@ -21,34 +19,19 @@ import java.util.Map;
 public class UnidadesDeArmazenamentoDao {
 
     private final String comando = "wmic diskdrive get Description, DeviceID, Index, Model, Partitions, PNPDeviceID, Size, Status /format:csv";
-
+    /**
+     *
+     * @return @throws IOException
+     */
     public List<UnidadeFisica> recuperarDados() throws IOException {
         List<String> lines = new LeitorWmic().executarProcessoMuitasLinhas(this.comando, "Node");
         String vetor[];
         UnidadeFisica unidadeFisica;
         List<UnidadeFisica> unidadeFisicas = new ArrayList<>();
-        Collections.sort(unidadeFisicas, new Comparator<UnidadeFisica>() {
-            @Override
-            public int compare(UnidadeFisica o1, UnidadeFisica o2) {
-                return o1.getIndex().compareTo(o2.getIndex());
-            }
-        });
-
         UnidadesLogicasDao unidadesLogicasDao = new UnidadesLogicasDao();
         List<UnidadeLogica> unidadesLogicas = unidadesLogicasDao.recuperarDados();
-        LeitorDiskPart leitorDiskPart = new LeitorDiskPart();
-        Map<Integer, List> parts = leitorDiskPart.executarProcesso("diskpart /s scripts/qtd_partcoes.txt");
-        ///// associar partiçoes
-        /**
-         * **********************************************
-         */
-        for (int i = 0; i < parts.size(); i++) {
-            ArrayList<String> strs = (ArrayList<String>) parts.get(i);
-            setIndex(unidadesLogicas, strs.toArray(new String[]{}), i);
-        }
-        /**
-         * ***********************************************
-         */
+        List<Particao> particoes = new ParticaoDao().recuperarDados();
+        setDiskIndexParaLogica(unidadesLogicas, particoes);
         int index = 0;
         for (String line : lines) {
             vetor = line.split(",");
@@ -61,18 +44,28 @@ public class UnidadesDeArmazenamentoDao {
         }
         return unidadeFisicas;
     }
-
-    private void setIndex(List<UnidadeLogica> us, String letters[], int index) {
-        for (String letter : letters) {
-            for (UnidadeLogica u : us) {
-                String devId = u.getDeviceID().substring(0, 1);
-                if (devId.equals(letter)) {
-                    u.setIndex(index);
+    /**
+     * Associa o index da unidade fisica as partições (exemplo partição disco 0)
+     *
+     * @param unidadesLogicas
+     * @param particoes
+     */
+    private void setDiskIndexParaLogica(List<UnidadeLogica> unidadesLogicas, List<Particao> particoes) {
+        for (Particao p : particoes) {
+            for (UnidadeLogica u : unidadesLogicas) {
+                if (u.getDeviceID().replace(":", "").equals(p.getLetra())) {
+                    u.setIndex(p.getDiskIndex());
                 }
             }
         }
     }
-
+    /**
+     * Pega as unidades logicas que tenha o indice indicado
+     *
+     * @param us
+     * @param index
+     * @return
+     */
     private List<UnidadeLogica> getUnidadesByIndex(List<UnidadeLogica> us, int index) {
         ArrayList<UnidadeLogica> unidades = new ArrayList<>();
         for (UnidadeLogica u : us) {

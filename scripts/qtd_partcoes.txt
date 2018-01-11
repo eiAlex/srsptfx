@@ -1,8 +1,0 @@
-select disk=0
-detail disk
-select disk=1
-detail disk
-select disk=2
-detail disk
-select disk=3
-detail disk
