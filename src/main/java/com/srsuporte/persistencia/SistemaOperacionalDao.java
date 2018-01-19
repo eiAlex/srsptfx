@@ -17,7 +17,7 @@ import java.io.IOException;
 public class SistemaOperacionalDao {
 
     // wmic os get
-    private final String comando = "wmic os get BuildType, Caption, InstallDate, OSArchitecture, Version, WindowsDirectory /format:csv";
+    private final String comando = "wmic os get BuildType, Caption, InstallDate, OSArchitecture, Version, WindowsDirectory, SerialNumber /format:csv";
 
     private final LeitorWmic leitorWmic;
     private final ConversorData conversorData;
@@ -37,6 +37,7 @@ public class SistemaOperacionalDao {
         so.setNome(vetor[2]);
         so.setVersao(vetor[5]);
         so.setPathPastaRaiz(vetor[6]);
+        so.setSerialNumber(vetor[7]);
         return so;
     }
 

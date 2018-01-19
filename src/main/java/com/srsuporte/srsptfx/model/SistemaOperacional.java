@@ -19,6 +19,7 @@ public class SistemaOperacional {
     private String versao;
     private Calendar dataInstalacao;
     private String pathPastaRaiz;
+    private String SerialNumber;
 
     public String getNome() {
         return nome;
@@ -67,6 +68,13 @@ public class SistemaOperacional {
     public void setPathPastaRaiz(String pathPastaRaiz) {
         this.pathPastaRaiz = pathPastaRaiz;
     }
-    
-    
+
+    public String getSerialNumber() {
+        return SerialNumber;
+    }
+
+    public void setSerialNumber(String SerialNumber) {
+        this.SerialNumber = SerialNumber;
+    }
+
 }

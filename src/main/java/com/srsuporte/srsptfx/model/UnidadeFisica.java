@@ -19,7 +19,7 @@ public class UnidadeFisica {
     private Integer partitions;
     private String PNPDeviceID;
     private Long size;
-    private String status;
+    private String status; // OK, BAD, Caution, Unknow (Smart detect)
     private List<UnidadeLogica> unidadeLogica;
 
     public UnidadeFisica(String description, String deviceID, String index, String model, String partitions, String PNPDeviceID, String size, String status, List<UnidadeLogica> unidadeLogica) {
