@@ -23,7 +23,7 @@ public class Main extends Application {
             System.out.println("CSS carregado!");
        
         
-        System.out.println("com.srsuporte.srsptfx.Main.start()");
+        System.out.println("Main.start()");
         
         
         stage.setScene(scene);
