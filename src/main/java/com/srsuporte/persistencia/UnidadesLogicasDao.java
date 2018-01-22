@@ -16,11 +16,13 @@ public class UnidadesLogicasDao {
 
     public List<UnidadeLogica> recuperarDados() throws IOException {
         List<String> lines = new LeitorWmic().executarProcessoMuitasLinhas(this.comando, "Node");
-        String vetor[];
+        String vetorTemp[];
+        String vetor[] = new String[8];
         UnidadeLogica unidadeLogica;
         List<UnidadeLogica> unidadeLogicas = new ArrayList<>();
         for (String line : lines) {
-            vetor = line.split(",");
+            vetorTemp = line.split(",");
+            System.arraycopy(vetorTemp, 0, vetor, 0, vetorTemp.length);
             unidadeLogica = new UnidadeLogica(vetor[1], vetor[2], vetor[3], vetor[4], vetor[5], vetor[6], vetor[7]);
             unidadeLogicas.add(unidadeLogica);
         }

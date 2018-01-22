@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.srsuporte.persistencia;
+package br.com.srsuporte.persistencia;
 
+import com.srsuporte.persistencia.MemoriaRamTotalDao;
 import com.srsuporte.srsptfx.model.MemoriaRamTotal;
 import java.io.IOException;
 import org.junit.Assert;
