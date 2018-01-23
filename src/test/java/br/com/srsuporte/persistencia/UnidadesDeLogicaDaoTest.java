@@ -5,7 +5,6 @@
  */
 package br.com.srsuporte.persistencia;
 
-import com.srsuporte.persistencia.UnidadesDeArmazenamentoDao;
 import com.srsuporte.persistencia.UnidadesLogicasDao;
 import com.srsuporte.srsptfx.model.UnidadeLogica;
 import java.io.IOException;
@@ -22,7 +21,7 @@ public class UnidadesDeLogicaDaoTest {
 
     private List<UnidadeLogica> unidadeLogica;
     @Before
-    public void onInit() throws IOException {
+    public void onInit() throws IOException, Exception {
         unidadeLogica = new UnidadesLogicasDao().recuperarDados();
     }
 

@@ -20,6 +20,9 @@ public class UnidadeLogica {
     private String volumeName; // nome atribuido ao volume exemplo: DADOS
     private Integer index;
 
+    public UnidadeLogica() {
+    }
+
     public UnidadeLogica(String deviceID, String driveType, String fileSystem, String freeSpace, String size, String volumeName, String volumeSerialNumber) {
         this.deviceID = deviceID;
         this.fileSystem = fileSystem;
